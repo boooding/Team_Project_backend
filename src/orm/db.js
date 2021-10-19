@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const {models} = require("mongoose");
 
 const url = 'mongodb://localhost:27017';
 const dbName = 'user';
@@ -18,3 +19,5 @@ db.on('error', err => {
 db.once('open', () => {
     console.log('mongoose connection success')
 })
+
+module.exports = mongoose;
