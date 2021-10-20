@@ -1,4 +1,4 @@
-const User = require('./Model/User');
+const User = require('../Model/User');
 
 const user_admin = new User({
     userName: 'booding',
