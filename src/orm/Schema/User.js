@@ -1,7 +1,7 @@
 const mongoose = require('../index')
 
 const UserSchema = mongoose.Schema({
-    userName: {
+    username: {
         type: String,
         required: true,
         unique: true
@@ -9,8 +9,7 @@ const UserSchema = mongoose.Schema({
     password: {
         type: String,
         required: true
-    },
-    userId: Number
+    }
 })
 
 module.exports = UserSchema;
