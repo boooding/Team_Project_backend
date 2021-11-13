@@ -16,7 +16,7 @@ class UsersCtl {
         ctx.body = user;
     }
     async checkOwner(ctx, next) {
-        if (ctx.params.id !== ctx.state.user._id) { ctx.throw(403, '没有权限'); }
+        if (ctx.params.id !== ctx.state.user._id) { ctx.throw(403, 'No authority'); }
         await next();
     }
     async update(ctx) {
@@ -26,7 +26,7 @@ class UsersCtl {
             avatar_url: { type: 'string', required: false }
         });
         const user = await User.findByIdAndUpdate(ctx.params.id, ctx.request.body);
-        if (!user) { ctx.throw(404, '用户不存在'); }
+        if (!user) { ctx.throw(404, 'user does not exit'); }
         ctx.body = user;
     }
 
