@@ -11,7 +11,7 @@ const routing = require('./routes');
 const {APP_PORT} = require("./config");
 
 // DataBase connection
-
+require("./models/connectDB")
 
 // middleware, handle the static file
 app.use(
@@ -37,7 +37,7 @@ app.use(koaBody({
 // middleware, support parameter verify
 app.use(parameter(app));
 
-routing(app);
+// routing(app);
 
 app.listen(
     APP_PORT,
