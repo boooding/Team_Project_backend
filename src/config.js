@@ -4,5 +4,7 @@ module.exports = {
     // Database
     DB_HOST: "localhost",
     DB_PORT: "27017",
-    DB_NAME: "MiniBlog"
+    DB_NAME: "MiniBlog",
+    // key
+    KEY: "Booding"
 }
