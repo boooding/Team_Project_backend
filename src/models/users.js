@@ -14,6 +14,11 @@ const userSchema = new Schema({
         required: true,
         select: false
     },
+    avatar_url: {
+        type: String,
+        required: false,
+        select: true
+    }
 }, {
         timestamps: true
     }

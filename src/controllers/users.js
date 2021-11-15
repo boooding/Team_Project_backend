@@ -68,7 +68,10 @@ class UsersCtl {
     // avatar upload
     uploadAvatar(ctx) {
         const file = ctx.request.files.file;
-        ctx.body = {path: file.path}
+        const fileBase = path.basename(file.path)
+        const avatarUrl = `${ctx.origin}/uploads/${fileBase}`;
+
+        ctx.body = { url: `${ctx.origin}/uploads/${fileBase}`}
     }
 }
 
