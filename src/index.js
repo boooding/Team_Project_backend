@@ -6,8 +6,6 @@ const parameter = require('koa-parameter');
 const path = require('path');
 const cors = require("@koa/cors")
 
-
-
 const app = new Koa();
 
 const routing = require('./routes');
@@ -28,7 +26,7 @@ app.use(
 
 // middleware, format the error depend on environment
 app.use(error({
-    postFormat: (e, { stack, ...rest }) => process.env.NODE_ENV === 'production' ? rest : { stack, ...rest }
+    postFormat: (e, { stack, ...rest }) => rest
 }));
 
 // middleware, handle the request body
