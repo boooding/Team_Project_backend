@@ -1,0 +1,7 @@
+const mongoose = require('mongoose');
+
+const { Schema, model } = mongoose;
+
+const blogSchema = new Schema({
+
+})

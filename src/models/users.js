@@ -18,6 +18,12 @@ const userSchema = new Schema({
         type: String,
         required: false,
         select: true
+    },
+    introduction: {
+        type: String,
+        default: "The blogger is to lazy to introduce himself",
+        required: false,
+        select: true
     }
 }, {
         timestamps: true

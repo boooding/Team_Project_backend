@@ -34,7 +34,7 @@ class UsersCtl {
         ctx.verifyParams({
             username: { type: 'string', required: false },
             password: { type: 'string', required: false },
-            // avatar_url: { type: 'string', required: false }
+            avatar_url: { type: 'string', required: false }
         });
         const user = await User.findByIdAndUpdate(ctx.params.id, ctx.request.body);
         if (!user) { ctx.throw(404, 'the user does not exit'); }
@@ -70,8 +70,8 @@ class UsersCtl {
         const file = ctx.request.files.file;
         const fileBase = path.basename(file.path)
         const avatarUrl = `${ctx.origin}/uploads/${fileBase}`;
+        ctx.body = { url: avatarUrl}
 
-        ctx.body = { url: `${ctx.origin}/uploads/${fileBase}`}
     }
 }
 
