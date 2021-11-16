@@ -24,6 +24,9 @@ const userSchema = new Schema({
         default: "The blogger is to lazy to introduce himself",
         required: false,
         select: true
+    },
+    blogList: {
+        type: [String]
     }
 }, {
         timestamps: true
